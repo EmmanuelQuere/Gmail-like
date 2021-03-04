@@ -1,0 +1,25 @@
+<h1>Email#index</h1>
+<%= button_to "Recevoir un email", emails_path, action: "create", remote: true %>
+<div class="container">
+  <div class="row">
+    <div id="emails-list" class="col-4 justify-content-center align-items-center" style="border: solid; justify-content: center; align-items: center;">
+      <h3>Liste emails</h3>
+      <% @emails.each do |email| %>
+        <% if !email.read? %> 
+          <p id= "<%= email.id %>" class= "font-weight-bold">
+            <%= link_to "#{email.object}", email_path(email.id), remote: true %>
+            <hr id= "hr <%= email.id %>">  
+          </p>
+        <% else %>
+          <p id= "<%= email.id %>">
+            <%= link_to "#{email.object}", email_path(email.id), remote: true %>
+            <hr id= "hr <%= email.id %>">  
+          </p>
+        <% end %>
+      <% end %>
+    </div>
+    <div id="email-body" class="col-6 justify-content-center align-items-center" style="border: solid; justify-content: center; align-items: center; border-left: none;">
+      <div id="content"></div>
+    </div>
+  </div>
+</div>

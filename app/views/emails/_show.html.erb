@@ -1,0 +1,9 @@
+<div id="content">  
+  <h3 id="body-title"><%= @email.object %></h3>
+  <hr>
+  <p><%= @email.body %></p>
+  <hr>
+
+  <%= button_to "Supprimer", email_path(@email.id), method: :delete, remote: true, class: "btn btn-danger" %>
+  <%= button_to "Marquer comme non-lu", email_path(@email.id), method: :put, remote: true, class: "btn btn-info" %>
+</div>  

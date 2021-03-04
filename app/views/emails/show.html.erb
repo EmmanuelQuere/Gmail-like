@@ -1,0 +1,7 @@
+<h3><%= @email.object %></h3>
+<hr>
+<p><%= @email.body %></p>
+<hr>
+
+<%= button_to "Supprimer", email_path(@email.id), method: :delete, remote: true, class: "btn btn-warning" %>
+<button class="btn btn-info">Marquer comme non lu</button>

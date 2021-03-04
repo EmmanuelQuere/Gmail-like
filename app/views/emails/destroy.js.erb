@@ -1,0 +1,5 @@
+document.getElementById("email-body").removeChild(document.getElementById("content"));
+document.getElementById("<%= @email.id %>").remove();
+document.getElementById("hr <%= @email.id %>").remove();
+
+alert("Email supprimé !");
